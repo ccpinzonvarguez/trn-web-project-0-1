@@ -60,7 +60,7 @@ main{width:min(720px,calc(100% - 32px));margin:auto}
 .empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed #D6DDE8;border-radius:14px;background:white;font-size:12px}
 
 .player{display:none;padding:25px 0 42px}
-.player.show{display:block}
+.player.show{display:block!important;min-height:220px}
 .back{display:inline-flex;align-items:center;border:0;border-radius:10px;background:var(--blue);color:#fff;font-weight:800;font-size:13px;padding:10px 14px;margin:0 0 16px;box-shadow:0 4px 12px rgba(35,79,134,.22);transition:transform .15s ease,box-shadow .15s ease}.back:hover{transform:translateY(-1px);box-shadow:0 7px 16px rgba(35,79,134,.24)}.back:focus-visible{outline:3px solid rgba(244,122,22,.35);outline-offset:2px}
 .player-title{font-size:24px;line-height:1.13;letter-spacing:-.04em;color:var(--blue-dark);margin:0 0 7px}
 .player-desc{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 17px}
@@ -95,7 +95,7 @@ footer{background:white;border-top:1px solid var(--line);padding:18px 0 25px}
   .video-card{border-radius:15px}.video-info{padding:10px 12px 12px}.video-title{font-size:13px}
   .lesson-number{width:40px;height:40px}
 }
-.player{display:none!important}</style>
+</style>
 </head>
 <body>
 <header class="topbar">
@@ -152,7 +152,7 @@ footer{background:white;border-top:1px solid var(--line);padding:18px 0 25px}
     <div id="lessonList" class="lesson-list"></div>
   </section>
 
-  <section class="player" id="player">
+  <section class="player" id="player" style="display:none">
     <button class="back" onclick="closePlayer()" data-i18n="back">← Back to lessons</button>
     <h2 id="playerTitle" class="player-title"></h2>
     <p id="playerDesc" class="player-desc"></p>
@@ -274,27 +274,55 @@ function renderSuggestions(q){
   if(!q){box.classList.remove("show");box.innerHTML="";return;}
   const items=avail().filter(v=>(v.title[currentLang]+" "+(v.desc[currentLang]||"")).toLowerCase().includes(q)).slice(0,5);
   if(!items.length){box.classList.remove("show");box.innerHTML="";return;}
-  box.innerHTML=items.map(v=>`<button class="suggestion" onclick="openVideo(${v.n})"><span>${v.title[currentLang]}</span><small>›</small></button>`).join("");
+  box.innerHTML=items.map(v=>`<button type="button" class="suggestion" onclick="openVideo(${v.n})"><span>${v.title[currentLang]}</span><small>›</small></button>`).join("");
   box.classList.add("show");
 }
 function openVideo(n){
-  const v=videos.find(x=>x.n===n);if(!v||!v.url[currentLang])return;
+  const v=videos.find(x=>x.n===n);
+  if(!v||!v.url[currentLang])return;
+
   currentVideo=n;
-  document.getElementById("playerTitle").textContent=v.title[currentLang];
-  document.getElementById("playerDesc").textContent=v.desc[currentLang]||"";
-  document.getElementById("video").src=v.url[currentLang];
-  document.getElementById("library").style.display="none";
-  document.getElementById("player").classList.add("show");
-  document.querySelector(".training-strip").style.display="none";
-  document.querySelector(".download").style.display="none";
-  window.scrollTo({top:0,behavior:"smooth"});
+
+  const library=document.getElementById("library");
+  const player=document.getElementById("player");
+  const video=document.getElementById("video");
+  const title=document.getElementById("playerTitle");
+  const desc=document.getElementById("playerDesc");
+  const suggestions=document.getElementById("suggestions");
+  const hero=document.querySelector(".training-strip");
+  const download=document.querySelector(".download");
+
+  title.textContent=v.title[currentLang];
+  desc.textContent=v.desc[currentLang]||"";
+  video.src=v.url[currentLang];
+
+  suggestions.classList.remove("show");
+  suggestions.innerHTML="";
+  library.style.display="none";
+  if(hero)hero.style.display="none";
+  if(download)download.style.display="none";
+
+  player.classList.add("show");
+  player.style.display="block";
+
+  setTimeout(()=>player.scrollIntoView({behavior:"smooth",block:"start"}),50);
 }
 function closePlayer(){
-  currentVideo=null;document.getElementById("video").src="";
-  document.getElementById("player").classList.remove("show");
-  document.getElementById("library").style.display="";
-  document.querySelector(".training-strip").style.display="";
-  document.querySelector(".download").style.display="";
+  currentVideo=null;
+
+  const player=document.getElementById("player");
+  const library=document.getElementById("library");
+  const video=document.getElementById("video");
+  const hero=document.querySelector(".training-strip");
+  const download=document.querySelector(".download");
+
+  video.src="";
+  player.classList.remove("show");
+  player.style.display="none";
+  library.style.display="";
+  if(hero)hero.style.display="";
+  if(download)download.style.display="";
+
   window.scrollTo({top:0,behavior:"smooth"});
 }
 const langButton=document.getElementById("langButton"),langMenu=document.getElementById("langMenu");
