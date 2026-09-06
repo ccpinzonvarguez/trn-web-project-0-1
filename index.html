@@ -48,9 +48,9 @@ main{width:min(720px,calc(100% - 32px));margin:auto}
 .suggestion span{font-size:12px;font-weight:700}
 .suggestion small{color:var(--orange);font-size:18px;line-height:1}
 .lesson-list{display:grid;gap:9px}
-.lesson{width:100%;border:1px solid rgba(255,255,255,.10);background:linear-gradient(135deg,#285B98 0%,var(--blue) 100%);border-radius:15px;min-height:88px;padding:12px 12px 12px 13px;display:grid;grid-template-columns:auto 1fr 17px;align-items:center;gap:11px;text-align:left;color:#fff;box-shadow:0 6px 16px rgba(23,56,95,.12);transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+.lesson{width:100%;border:1px solid rgba(255,255,255,.10);background:linear-gradient(135deg,#285B98 0%,var(--blue) 100%);border-radius:15px;min-height:88px;padding:12px 12px 12px 13px;display:grid;grid-template-columns:1fr 17px;align-items:center;gap:11px;text-align:left;color:#fff;box-shadow:0 6px 16px rgba(23,56,95,.12);transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
 .lesson:hover{transform:translateY(-1px);box-shadow:0 9px 20px rgba(23,56,95,.16);background:linear-gradient(135deg,#2B619F 0%,#24558F 100%)}.lesson:focus-visible{outline:3px solid rgba(244,122,22,.38);outline-offset:2px}.lesson:active{transform:scale(.992)}
-.lesson-numbers{display:flex;gap:5px;align-items:center}.lesson-number{width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.30);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900}
+.lesson-numbers{display:flex;gap:5px;align-items:center}.lesson-number{display:none;width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.30);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900}
 .lesson-title{display:block;color:#fff;font-size:13px;line-height:1.34;font-weight:800}
 .lesson-meta{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
 .tag{font-size:9px;font-weight:850;color:var(--blue);background:#fff;border-radius:999px;padding:4px 7px;box-shadow:0 1px 3px rgba(16,47,85,.08)}
@@ -90,7 +90,7 @@ footer{background:white;border-top:1px solid var(--line);padding:18px 0 25px}
   .store-buttons{margin-left:6px}
   .store-img{width:105px;height:29px}
   .section-head h2{font-size:22px}
-  .lesson{min-height:84px;padding:11px 10px 11px 11px;gap:9px}
+  .lesson{min-height:84px;padding:12px;gap:10px}
   .lesson-number{width:40px;height:40px}
 }
 </style>
