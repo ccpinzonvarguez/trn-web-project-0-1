@@ -25,18 +25,18 @@ button,input,select{font:inherit}button{cursor:pointer}
 .lang-button{appearance:none;border:1px solid rgba(255,255,255,.40);background:rgba(255,255,255,.10);color:#fff;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:800;display:flex;align-items:center;gap:5px;min-width:86px;justify-content:center}.lang-button b{font-size:13px;font-weight:800;line-height:1;transform:translateY(-1px)}.lang-menu{display:none;position:absolute;right:0;top:45px;width:168px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px rgba(16,47,85,.18);overflow:hidden;z-index:100}.lang-menu.show{display:block}.lang-menu button{width:100%;border:0;background:#fff;color:var(--blue-dark);padding:9px 11px;display:flex;align-items:center;gap:8px;text-align:left;font-size:11px;font-weight:750;border-bottom:1px solid #EEF1F5}.lang-menu button:last-child{border-bottom:0}.lang-menu button:hover{background:#F5F8FC}
 main{width:min(720px,calc(100% - 32px));margin:auto}
 
-.training-strip{margin:12px 0 15px;background:var(--blue);border-radius:15px;padding:18px 17px 19px;position:relative;overflow:hidden}
-.training-main{position:relative;z-index:1;min-width:0}.training-strip:after{content:"";position:absolute;width:82px;height:82px;border-radius:50%;right:-32px;bottom:-46px;background:var(--orange)}
+.training-strip{margin:12px 0 17px;background:linear-gradient(135deg,var(--blue) 0%,#285B98 100%);border-radius:16px;padding:18px 18px 19px;position:relative;overflow:hidden;box-shadow:0 7px 18px rgba(23,56,95,.12)}
+.training-main{position:relative;z-index:1;min-width:0}.training-strip:after{content:"";position:absolute;width:92px;height:92px;border-radius:50%;right:-38px;bottom:-52px;background:var(--orange);opacity:.95}.training-strip:before{content:"";position:absolute;width:5px;height:42px;left:0;top:19px;background:var(--orange);border-radius:0 5px 5px 0}
 .eyebrow{color:#FFD0AB;font-size:8px;font-weight:900;letter-spacing:.17em;margin:0;position:relative;z-index:1;white-space:nowrap}
-.training-strip h1{margin:0;color:#fff;font-size:27px;line-height:1.05;letter-spacing:-.045em}
+.training-strip h1{margin:0;color:#fff;font-size:26px;line-height:1.08;letter-spacing:-.045em}
 .training-strip h1 span{color:#FF9A4D;margin-left:2px}
-.training-strip p{margin:8px 0 0;color:rgba(255,255,255,.82);font-size:11px;line-height:1.4;max-width:590px}
+.training-strip p{margin:8px 0 0;color:rgba(255,255,255,.84);font-size:11.5px;line-height:1.45;max-width:590px}
 
 .lessons{padding-bottom:28px}
-.section-head{margin-bottom:11px}
-.section-head h2{margin:0;color:var(--blue-dark);font-size:23px;letter-spacing:-.035em}
+.section-head{margin:0 1px 11px}
+.section-head h2{margin:0;color:var(--blue-dark);font-size:23px;line-height:1.1;letter-spacing:-.035em}
 .section-head p{margin:4px 0 0;color:var(--muted);font-size:12px}
-.search{position:relative;margin-bottom:10px}
+.search{position:relative;margin-bottom:12px}
 .search input{width:100%;height:51px;border:1px solid var(--line);background:white;border-radius:13px;padding:0 15px 0 44px;color:var(--ink);outline:none;font-size:14px;box-shadow:0 2px 8px rgba(23,56,95,.035)}
 .search input:focus{border-color:#8E9DBC;box-shadow:0 0 0 4px rgba(142,157,188,.15)}
 .search-icon{position:absolute;left:15px;top:15px;width:17px;height:17px;border:2px solid #8E9DBC;border-radius:50%}
@@ -47,28 +47,28 @@ main{width:min(720px,calc(100% - 32px));margin:auto}
 .suggestion:last-child{border-bottom:0}
 .suggestion span{font-size:12px;font-weight:700}
 .suggestion small{color:var(--orange);font-size:18px;line-height:1}
-.lesson-list{display:grid;gap:8px}
-.lesson{width:100%;border:1px solid #2E609A;background:var(--blue);border-radius:14px;min-height:86px;padding:12px;display:grid;grid-template-columns:auto 1fr 17px;align-items:center;gap:11px;text-align:left;color:#fff;box-shadow:0 5px 14px rgba(23,56,95,.10);transition:.15s ease}
-.lesson:active{transform:scale(.99)}
-.lesson-numbers{display:flex;gap:5px;align-items:center}.lesson-number{width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.28);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900}
+.lesson-list{display:grid;gap:9px}
+.lesson{width:100%;border:1px solid rgba(255,255,255,.10);background:linear-gradient(135deg,#285B98 0%,var(--blue) 100%);border-radius:15px;min-height:88px;padding:12px 12px 12px 13px;display:grid;grid-template-columns:auto 1fr 17px;align-items:center;gap:11px;text-align:left;color:#fff;box-shadow:0 6px 16px rgba(23,56,95,.12);transition:transform .16s ease,box-shadow .16s ease,background .16s ease}
+.lesson:hover{transform:translateY(-1px);box-shadow:0 9px 20px rgba(23,56,95,.16);background:linear-gradient(135deg,#2B619F 0%,#24558F 100%)}.lesson:focus-visible{outline:3px solid rgba(244,122,22,.38);outline-offset:2px}.lesson:active{transform:scale(.992)}
+.lesson-numbers{display:flex;gap:5px;align-items:center}.lesson-number{width:42px;height:42px;border-radius:11px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.30);color:#fff;display:grid;place-items:center;font-size:11px;font-weight:900}
 .lesson-title{display:block;color:#fff;font-size:13px;line-height:1.34;font-weight:800}
 .lesson-meta{display:flex;gap:5px;margin-top:6px;flex-wrap:wrap}
-.tag{font-size:9px;font-weight:800;color:var(--blue);background:#fff;border-radius:999px;padding:4px 7px}
-.arrow{font-size:23px;color:#fff}
+.tag{font-size:9px;font-weight:850;color:var(--blue);background:#fff;border-radius:999px;padding:4px 7px;box-shadow:0 1px 3px rgba(16,47,85,.08)}
+.arrow{font-size:24px;color:#fff;transition:transform .16s ease}.lesson:hover .arrow{transform:translateX(2px)}
 .empty{padding:22px;text-align:center;color:var(--muted);border:1px dashed #D6DDE8;border-radius:14px;background:white;font-size:12px}
 
 .player{display:none;padding:25px 0 42px}
 .player.show{display:block}
-.back{display:inline-flex;align-items:center;border:0;border-radius:10px;background:var(--blue);color:#fff;font-weight:800;font-size:13px;padding:10px 14px;margin:0 0 16px;box-shadow:0 4px 12px rgba(35,79,134,.22)}
+.back{display:inline-flex;align-items:center;border:0;border-radius:10px;background:var(--blue);color:#fff;font-weight:800;font-size:13px;padding:10px 14px;margin:0 0 16px;box-shadow:0 4px 12px rgba(35,79,134,.22);transition:transform .15s ease,box-shadow .15s ease}.back:hover{transform:translateY(-1px);box-shadow:0 7px 16px rgba(35,79,134,.24)}.back:focus-visible{outline:3px solid rgba(244,122,22,.35);outline-offset:2px}
 .player-title{font-size:24px;line-height:1.13;letter-spacing:-.04em;color:var(--blue-dark);margin:0 0 7px}
 .player-desc{color:var(--muted);font-size:13px;line-height:1.5;margin:0 0 17px}
 .video-frame{width:100%;aspect-ratio:16/9;background:#101522;border-radius:15px;overflow:hidden;box-shadow:0 12px 30px rgba(23,56,95,.16)}
 .video-frame iframe{width:100%;height:100%;border:0}
 
-.download{margin:0 0 16px;background:var(--blue);border-radius:12px;padding:9px 12px;box-shadow:0 2px 8px rgba(23,56,95,.07)}
+.download{margin:0 0 18px;background:var(--blue);border-radius:13px;padding:10px 12px;box-shadow:0 4px 12px rgba(23,56,95,.09)}
 .download-row{display:flex;align-items:center;justify-content:space-between;gap:10px}.download-head{flex:1;display:block;margin:0}
-.download-copy h2{margin:0;color:white;font-size:13px;letter-spacing:-.01em}
-.download-copy p{margin:3px 0 0;color:rgba(255,255,255,.66);font-size:9px}
+.download-copy h2{margin:0;color:white;font-size:13px;line-height:1.2;letter-spacing:-.01em}
+.download-copy p{margin:4px 0 0;color:rgba(255,255,255,.70);font-size:9.5px;line-height:1.3}
 .store-buttons{display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:4px;margin-left:10px}
 .store-img{display:block;width:112px;height:31px;line-height:0;border-radius:0;overflow:visible;background:transparent;flex:none}
 .store-img img{display:block;width:100%;height:100%;object-fit:contain}
@@ -76,6 +76,23 @@ main{width:min(720px,calc(100% - 32px));margin:auto}
 footer{background:white;border-top:1px solid var(--line);padding:18px 0 25px}
 .footer-inner{width:min(720px,calc(100% - 32px));margin:auto;text-align:center;color:#8A94A5;font-size:10px}
 .footer-inner strong{color:var(--blue)}
+
+@media (max-width:420px){
+  .topbar-inner,main,.footer-inner{width:min(720px,calc(100% - 24px))}
+  .topbar-inner{height:60px}
+  .brand-name{font-size:13px}
+  .training-strip{margin-top:10px;padding:17px 16px 18px}
+  .training-strip h1{font-size:24px}
+  .training-strip p{font-size:11px;max-width:94%}
+  .download{padding:9px 10px}
+  .download-copy h2{font-size:12px}
+  .download-copy p{font-size:9px}
+  .store-buttons{margin-left:6px}
+  .store-img{width:105px;height:29px}
+  .section-head h2{font-size:22px}
+  .lesson{min-height:84px;padding:11px 10px 11px 11px;gap:9px}
+  .lesson-number{width:40px;height:40px}
+}
 </style>
 </head>
 <body>
@@ -98,7 +115,6 @@ footer{background:white;border-top:1px solid var(--line);padding:18px 0 25px}
 
 <main>
   <section class="training-strip" id="home">
-    <div class="eyebrow" data-i18n="eyebrow">TRAINING CENTER</div>
     <div class="training-main"><h1>HHA Exchange+ <span>Training</span></h1>
     <p data-i18n="heroText">Simple, step-by-step training videos to help caregivers use HHA Exchange+ with confidence.</p></div>
   </section>
@@ -205,7 +221,7 @@ const videos=[
 {n:4,title:{en:"How to request a time correction in HHA Exchange+",es:"Cómo enviar una corrección de tiempo en HHA Exchange+",ht:"Kijan pou voye yon koreksyon lè nan HHA Exchange+"},desc:{en:"This tutorial explains how to submit a time correction in the HHA Exchange app when you need to correct a missed or incorrect clock-in or clock-out. Please follow the steps carefully to make sure your correction request is submitted properly. Topics covered: How to request a time correction; Correcting a missed clock-in; Correcting a missed clock-out; Submitting the correction request. For caregivers using HHA Exchange through Affinity Home Care.",es:"Este tutorial explica cómo enviar una corrección de tiempo en la aplicación HHA Exchange+ cuando necesitas corregir una entrada o salida que no registraste o que registraste incorrectamente. Sigue los pasos cuidadosamente para asegurarte de que tu solicitud de corrección se envíe correctamente. Para caregivers de Affinity Home Care.",ht:"Aprann kijan pou voye yon koreksyon lè nan aplikasyon HHA Exchange+ lè ou bezwen korije yon antre oswa yon sòti ou rate oswa ki pa kòrèk."},url:{es:"https://www.youtube-nocookie.com/embed/WBK4mr-lQwM?playsinline=1"},lessons:{es:[3]}}
 ];
 
-const copy={"en":{"eyebrow":"TRAINING CENTER","heroText":"Find all the lessons you need to use the HHA Exchange+ app in short, simple videos. In these videos, you'll learn step by step how to use the HHA Exchange+ app as easily as possible.","lessonsTitle":"Training Lessons","lessonsSub":"Click the lesson you want to watch","searchPlaceholder":"Search lessons...","back":"← Back to lessons","downloadTitle":"Download the HHA Exchange+ mobile app","downloadText":"Available for iPhone and Android. Click the images to download.","lesson":"LESSON","noResults":"No lessons found for your search."},"es":{"eyebrow":"CENTRO DE ENTRENAMIENTO","heroText":"Encuentra todas las lecciones para usar la aplicación HHA Exchange+ en videos cortos y sencillos. En estos videos, aprenderás paso a paso cómo usar la aplicación de HHA Exchange+ de la manera más fácil.","lessonsTitle":"Lecciones de entrenamiento","lessonsSub":"Haz clic en la lección que deseas ver","searchPlaceholder":"Buscar lecciones...","back":"← Volver a las lecciones","downloadTitle":"Descarga la aplicación móvil de HHA Exchange+","downloadText":"Disponible para iPhone y Android. Haz clic en las imágenes para descargar.","lesson":"LECCIÓN","noResults":"No se encontraron lecciones para tu búsqueda."},"ht":{"eyebrow":"SANT FÒMASYON","heroText":"Jwenn tout leson ou bezwen pou itilize aplikasyon HHA Exchange+ la nan videyo kout ak senp. Nan videyo sa yo, w ap aprann etap pa etap kijan pou itilize aplikasyon HHA Exchange+ la pi fasil posib.","lessonsTitle":"Leson Fòmasyon","lessonsSub":"Klike sou leson ou vle gade a","searchPlaceholder":"Chèche leson...","back":"← Retounen nan leson yo","downloadTitle":"Telechaje aplikasyon mobil HHA Exchange+ la","downloadText":"Disponib pou iPhone ak Android. Klike sou imaj yo pou telechaje.","lesson":"LESON","noResults":"Pa gen leson ki jwenn pou rechèch ou a."}};
+const copy={"en":{"heroText":"Find all the lessons you need to use the HHA Exchange+ app in short, simple videos. In these videos, you'll learn step by step how to use the HHA Exchange+ app as easily as possible.","lessonsTitle":"Training Lessons","lessonsSub":"Click the lesson you want to watch","searchPlaceholder":"Search lessons...","back":"← Back to lessons","downloadTitle":"Download the HHA Exchange+ mobile app","downloadText":"Available for iPhone and Android. Click the images to download.","lesson":"LESSON","noResults":"No lessons found for your search."},"es":{"heroText":"Encuentra todas las lecciones para usar la aplicación HHA Exchange+ en videos cortos y sencillos. En estos videos, aprenderás paso a paso cómo usar la aplicación de HHA Exchange+ de la manera más fácil.","lessonsTitle":"Lecciones de entrenamiento","lessonsSub":"Haz clic en la lección que deseas ver","searchPlaceholder":"Buscar lecciones...","back":"← Volver a las lecciones","downloadTitle":"Descarga la aplicación móvil de HHA Exchange+","downloadText":"Disponible para iPhone y Android. Haz clic en las imágenes para descargar.","lesson":"LECCIÓN","noResults":"No se encontraron lecciones para tu búsqueda."},"ht":{"heroText":"Jwenn tout leson ou bezwen pou itilize aplikasyon HHA Exchange+ la nan videyo kout ak senp. Nan videyo sa yo, w ap aprann etap pa etap kijan pou itilize aplikasyon HHA Exchange+ la pi fasil posib.","lessonsTitle":"Leson Fòmasyon","lessonsSub":"Klike sou leson ou vle gade a","searchPlaceholder":"Chèche leson...","back":"← Retounen nan leson yo","downloadTitle":"Telechaje aplikasyon mobil HHA Exchange+ la","downloadText":"Disponib pou iPhone ak Android. Klike sou imaj yo pou telechaje.","lesson":"LESON","noResults":"Pa gen leson ki jwenn pou rechèch ou a."}};
 
 let currentLang=localStorage.getItem("trnLanguage")||"en";
 let currentVideo=null;
